@@ -3,7 +3,7 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 var app = express();
 
-var skierTerms = [
+var skierTerms =
     {
   "schedule": [
     {
@@ -13,7 +13,7 @@ var skierTerms = [
           "time": "8:00 am",
           "sessions": [
             {
-              "name": "Breakfast",
+              "name": "Breakfasterer",
               "timeStart": "8:00 am",
               "timeEnd": "9:00 am",
               "location": "Main hallway",
@@ -338,7 +338,7 @@ var skierTerms = [
   ]
 
 }
-];
+;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
