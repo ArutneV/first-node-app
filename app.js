@@ -34,6 +34,10 @@ app.get("/dictionary-api", function(req, res) {
     res.json(skierTerms);
 });
 
+app.get("/dictionary-api/:term", function(req, res) {
+    res.json(skierTerms.term);
+});
+
 app.post("/dictionary-api", function(req, res) {
     skierTerms.push(req.body);
     res.json(skierTerms);
