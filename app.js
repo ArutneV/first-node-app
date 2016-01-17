@@ -22,8 +22,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function(req, res, next) {
-	console.log(`${req.method} request for '${req.url}' - ${JSON.stringify(req.body)}`);
-	next();
+    console.log(`${req.method} request for '${req.url}' - ${JSON.stringify(req.body)}`);
+    next();
 });
 
 app.use(express.static("./public"));
@@ -31,7 +31,7 @@ app.use(express.static("./public"));
 app.use(cors());
 
 app.get("/dictionary-api", function(req, res) {
-	res.json(skierTerms);
+    res.json(skierTerms);
 });
 
 app.post("/dictionary-api", function(req, res) {
@@ -46,7 +46,9 @@ app.delete("/dictionary-api/:term", function(req, res) {
     res.json(skierTerms);
 });
 
-app.listen(3000);
+var port = process.env.PORT || 3000;
+
+app.listen(port);
 
 console.log("Express app running on port 3000");
 
